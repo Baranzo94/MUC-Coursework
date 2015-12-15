@@ -15,6 +15,7 @@ import android.support.v4.app.DialogFragment;
 //@TargetApi(Build.VERSION_CODES.HONEYCOMB)
 public class laAboutDialogue extends DialogFragment
 {
+    // This is class is responsible for the creation of the About Dialogue which is accessable through the menu
     @Override
     public Dialog onCreateDialog (Bundle savedInstanceState)
     {

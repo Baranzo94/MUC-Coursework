@@ -7,6 +7,8 @@ import java.io.Serializable;
 
 public class carParkData implements Serializable{
 
+
+    //Variables defined for prep for parsing
     private String carParkIdentity;
     private String carParkOccupancy;
 
@@ -17,6 +19,7 @@ public class carParkData implements Serializable{
         carParkOccupancy = "";
     }
 
+    //Getters and Setters for Strings for the parser
     public String getcarParkIdentity()
     {
         return carParkIdentity;
@@ -37,10 +40,10 @@ public class carParkData implements Serializable{
         carParkOccupancy = occupancy;
     }
 
+    //Preparing variables to passed to parser, converted to string
     public String toString()
     {
         String carparkData;
-
 
         carparkData = "carParkData [itemTitle = " + carParkIdentity;
         carparkData = ", carParkOccupancy" + carParkOccupancy +"]";

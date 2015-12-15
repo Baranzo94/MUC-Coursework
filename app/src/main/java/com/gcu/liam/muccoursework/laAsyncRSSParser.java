@@ -30,6 +30,7 @@ public class laAsyncRSSParser extends AsyncTask <String, Integer, carParkData>
     protected void onPreExecute()
     {
         //Message to indicate start of parsing
+
         Toast.makeText(appContext,"Parsing started!", Toast.LENGTH_SHORT).show();
     }
 

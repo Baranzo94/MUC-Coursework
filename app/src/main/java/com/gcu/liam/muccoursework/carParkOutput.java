@@ -16,6 +16,7 @@ import java.util.concurrent.ExecutionException;
 public class carParkOutput extends MainActivity implements View.OnClickListener
 {
 
+    //Declaration of textviews to display car park information from parser
     TextView tvPark1;
     TextView tvPark2;
     TextView tvPark3;
@@ -28,15 +29,15 @@ public class carParkOutput extends MainActivity implements View.OnClickListener
     TextView tvPark10;
     TextView tvPark11;
 
+    // Declaration of button
     Button btnBack;
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.carpark_screen);
-
-
-
+        //Retreivel of data from parser
         carParkData carPark = new carParkData();
+        //URL of car park feed
         String RSSFeedURL = "https://api.open.glasgow.gov.uk/traffic/carparks";
         laAsyncRSSParser rssAsyncParse = new laAsyncRSSParser(this,RSSFeedURL);
         try {
@@ -48,7 +49,7 @@ public class carParkOutput extends MainActivity implements View.OnClickListener
         catch (ExecutionException e) {
             e.printStackTrace();
         }
-
+// Parser data converted to string to be shown by respective text views
         tvPark1 = (TextView) findViewById(R.id.tvPark1);
         tvPark1.setText(laAsyncRSSParser.cpData.get(0).getcarParkIdentity() +"   "+ "Occupied Spaces = "+laAsyncRSSParser.cpData.get(0).getcarParkOccupancy()) ;
 
@@ -81,11 +82,11 @@ public class carParkOutput extends MainActivity implements View.OnClickListener
 
         tvPark11 = (TextView) findViewById(R.id.tvPark11);
         tvPark11.setText(laAsyncRSSParser.cpData.get(10).getcarParkIdentity() +"   "+"Occupied Spaces = "+laAsyncRSSParser.cpData.get(10).getcarParkOccupancy());
-
+//Get the back button
         btnBack = (Button) findViewById(R.id.btnBack);
         btnBack.setOnClickListener(this);
     }
-
+//Back button used to go back to previous activity
     public void onClick(View view)
     {
         if (view == btnBack) {

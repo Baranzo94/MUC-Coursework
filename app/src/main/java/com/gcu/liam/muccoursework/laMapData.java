@@ -7,6 +7,7 @@ import java.io.Serializable;
  */
 public class laMapData implements Serializable
 {
+    // Set variables for retrieval of specified data from database
     private int entryID;
     private String Venue;
     private float Latitude;

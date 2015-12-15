@@ -25,10 +25,12 @@ import com.google.android.gms.maps.model.MarkerOptions;
  * Created by Liam on 08/12/2015.
  */
 public class laMapActivity extends AppCompatActivity
-
+//This class is responsible for reading the data provided by the database of lunch venues and their coordinates, this sets up the map in the
+    // designated fragment,setting up map, addition of markers, setting the initial zoom location on Glasgow.
 {
     List<laMapData> mapDataList;
     private Marker[] mapDataMarkerList = new Marker[5];
+    // Google map variable
     private GoogleMap maplunchtime;
     private float markerColours[] = {210.0f, 120.0f, 300.0f, 330.0f, 270.0f};
 
@@ -43,6 +45,7 @@ public class laMapActivity extends AppCompatActivity
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         setContentView(R.layout.la_map_view);
 
+        //Get list created from database manager
         mapDataList = new ArrayList<laMapData>();
         laMapDataDBMgr mapDB = new laMapDataDBMgr(this,"lunchtimeInfo.s3db",null,1);
         try {
@@ -51,19 +54,25 @@ public class laMapActivity extends AppCompatActivity
             e.printStackTrace();
         }
         mapDataList = mapDB.allMapData();
+        //Call methods to create markers and set up the map
         SetUpMap();
         AddMarkers();
         }
 
     public void SetUpMap()
     {
+        //Create the map
         maplunchtime = ((MapFragment) getFragmentManager().findFragmentById(R.id.map)).getMap();
         if (maplunchtime != null)
         {
+            //Set default location to center of glasgow (George Square)
             maplunchtime.moveCamera(CameraUpdateFactory.newLatLngZoom(latLngGlasgowCentre, 12));
             maplunchtime.setMyLocationEnabled(true);
+            //Enabling GPS
             maplunchtime.getUiSettings().setCompassEnabled(true);
+            //Enabling Compass
             maplunchtime.getUiSettings().setMyLocationButtonEnabled(true);
+            //Enabling Location buttons
             maplunchtime.getUiSettings().setRotateGesturesEnabled(true);
         }
     }
@@ -74,7 +83,7 @@ public class laMapActivity extends AppCompatActivity
         laMapData mapData;
         String mrkTitle;
         String mrkText;
-
+// Creation of markers for each entry in Database, Display the Name at the location with a random colour assigned
         for(int i = 0; i < mapDataList.size(); i++)
         {
             mapData = mapDataList.get(i);
