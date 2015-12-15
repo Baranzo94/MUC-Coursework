@@ -21,7 +21,7 @@ import android.widget.Button;
 
 public class MainActivity extends ActionBarActivity implements View.OnClickListener
 {
-    SharedPreferences mySharedPrefs;
+    //SharedPreferences mySharedPrefs;
     FragmentManager fmAboutDialogue;
 
     Button btnStart;
@@ -49,7 +49,7 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
         btnParking = (Button) findViewById(R.id.btnParking);
         btnParking.setOnClickListener(this);
 
-        mySharedPrefs = PreferenceManager.getDefaultSharedPreferences(this);
+        //mySharedPrefs = PreferenceManager.getDefaultSharedPreferences(this);
 
         venueInfo = new laMapData();
 

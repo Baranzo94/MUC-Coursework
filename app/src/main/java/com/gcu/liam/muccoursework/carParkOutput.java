@@ -50,37 +50,37 @@ public class carParkOutput extends MainActivity implements View.OnClickListener
         }
 
         tvPark1 = (TextView) findViewById(R.id.tvPark1);
-        tvPark1.setText(laAsyncRSSParser.cpData.get(0).getcarParkIdentity() +" "+laAsyncRSSParser.cpData.get(0).getcarParkOccupancy());
+        tvPark1.setText(laAsyncRSSParser.cpData.get(0).getcarParkIdentity() +"   "+ "Occupied Spaces = "+laAsyncRSSParser.cpData.get(0).getcarParkOccupancy()) ;
 
         tvPark2 = (TextView) findViewById(R.id.tvPark2);
-        tvPark2.setText(laAsyncRSSParser.cpData.get(1).getcarParkIdentity() +" "+laAsyncRSSParser.cpData.get(1).getcarParkOccupancy());
+        tvPark2.setText(laAsyncRSSParser.cpData.get(1).getcarParkIdentity() +"   "+ "Occupied Spaces = "+laAsyncRSSParser.cpData.get(1).getcarParkOccupancy());
 
         tvPark3 = (TextView) findViewById(R.id.tvPark3);
-        tvPark3.setText(laAsyncRSSParser.cpData.get(2).getcarParkIdentity() +" "+laAsyncRSSParser.cpData.get(2).getcarParkOccupancy());
+        tvPark3.setText(laAsyncRSSParser.cpData.get(2).getcarParkIdentity() +"   "+ "Occupied Spaces = "+laAsyncRSSParser.cpData.get(2).getcarParkOccupancy());
 
         tvPark4 = (TextView) findViewById(R.id.tvPark4);
-        tvPark4.setText(laAsyncRSSParser.cpData.get(3).getcarParkIdentity() +" "+laAsyncRSSParser.cpData.get(3).getcarParkOccupancy());
+        tvPark4.setText(laAsyncRSSParser.cpData.get(3).getcarParkIdentity() +"   "+"Occupied Spaces = "+laAsyncRSSParser.cpData.get(3).getcarParkOccupancy());
 
         tvPark5 = (TextView) findViewById(R.id.tvPark5);
-        tvPark5.setText(laAsyncRSSParser.cpData.get(4).getcarParkIdentity() +" "+laAsyncRSSParser.cpData.get(4).getcarParkOccupancy());
+        tvPark5.setText(laAsyncRSSParser.cpData.get(4).getcarParkIdentity() +"   "+"Occupied Spaces = "+laAsyncRSSParser.cpData.get(4).getcarParkOccupancy());
 
         tvPark6 = (TextView) findViewById(R.id.tvPark6);
-        tvPark6.setText(laAsyncRSSParser.cpData.get(5).getcarParkIdentity() +" "+laAsyncRSSParser.cpData.get(5).getcarParkOccupancy());
+        tvPark6.setText(laAsyncRSSParser.cpData.get(5).getcarParkIdentity() +"   "+"Occupied Spaces = "+laAsyncRSSParser.cpData.get(5).getcarParkOccupancy());
 
         tvPark7 = (TextView) findViewById(R.id.tvPark7);
-        tvPark7.setText(laAsyncRSSParser.cpData.get(6).getcarParkIdentity() +" "+laAsyncRSSParser.cpData.get(6).getcarParkOccupancy());
+        tvPark7.setText(laAsyncRSSParser.cpData.get(6).getcarParkIdentity() +"   "+"Occupied Spaces = "+laAsyncRSSParser.cpData.get(6).getcarParkOccupancy());
 
         tvPark8 = (TextView) findViewById(R.id.tvPark8);
-        tvPark8.setText(laAsyncRSSParser.cpData.get(7).getcarParkIdentity() +" "+laAsyncRSSParser.cpData.get(7).getcarParkOccupancy());
+        tvPark8.setText(laAsyncRSSParser.cpData.get(7).getcarParkIdentity() +"   "+"Occupied Spaces = "+laAsyncRSSParser.cpData.get(7).getcarParkOccupancy());
 
         tvPark9 = (TextView) findViewById(R.id.tvPark9);
-        tvPark9.setText(laAsyncRSSParser.cpData.get(8).getcarParkIdentity() +" "+laAsyncRSSParser.cpData.get(8).getcarParkOccupancy());
+        tvPark9.setText(laAsyncRSSParser.cpData.get(8).getcarParkIdentity() +"   "+"Occupied Spaces = "+laAsyncRSSParser.cpData.get(8).getcarParkOccupancy());
 
         tvPark10 = (TextView) findViewById(R.id.tvPark10);
-        tvPark10.setText(laAsyncRSSParser.cpData.get(9).getcarParkIdentity() +" "+laAsyncRSSParser.cpData.get(9).getcarParkOccupancy());
+        tvPark10.setText(laAsyncRSSParser.cpData.get(9).getcarParkIdentity() +"   "+"Occupied Spaces = "+laAsyncRSSParser.cpData.get(9).getcarParkOccupancy());
 
         tvPark11 = (TextView) findViewById(R.id.tvPark11);
-        tvPark11.setText(laAsyncRSSParser.cpData.get(10).getcarParkIdentity() +" "+laAsyncRSSParser.cpData.get(10).getcarParkOccupancy());
+        tvPark11.setText(laAsyncRSSParser.cpData.get(10).getcarParkIdentity() +"   "+"Occupied Spaces = "+laAsyncRSSParser.cpData.get(10).getcarParkOccupancy());
 
         btnBack = (Button) findViewById(R.id.btnBack);
         btnBack.setOnClickListener(this);
