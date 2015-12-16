@@ -192,17 +192,7 @@ public class laMapDataDBMgr extends SQLiteOpenHelper
         SQLiteDatabase db = this.getWritableDatabase();
 
         Cursor cursor = db.rawQuery(query, null);
-    /*
-        mcStarSignsInfo StarSignsInfo = new mcStarSignsInfo();
 
-        if (cursor.moveToFirst()) {
-            StarSignsInfo.setStarSignID(Integer.parseInt(cursor.getString(0)));
-            db.delete(TBL_MAPEKFAME, COL_ENTRYID + " = ?",
-                    new String[] { String.valueOf(StarSignsInfo.getStarSignID()) });
-            cursor.close();
-            result = true;
-        }
-        db.close();*/
         return result;
     }
 

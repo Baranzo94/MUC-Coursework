@@ -35,7 +35,7 @@ public class carParkOutput extends MainActivity implements View.OnClickListener
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.carpark_screen);
-        //Retreivel of data from parser
+        //Retrieval of data from parser
         carParkData carPark = new carParkData();
         //URL of car park feed
         String RSSFeedURL = "https://api.open.glasgow.gov.uk/traffic/carparks";
