@@ -18,12 +18,17 @@ import java.util.Random;
  */
 public class outputScreen extends MainActivity implements View.OnClickListener
 {
+    //Declare buttons and textviews
     Button btnVenues;
     Button btnMap;
     //Button btnChoice;
     TextView tvChoice;
+
+    //Generate a random number to be used to randomly select a index in the array
     Random rand = new Random();
     int n = rand.nextInt(5);
+
+    //Get the list of data retreived from the database
     List<laMapData> mapDataList;
 
 
@@ -43,7 +48,7 @@ public class outputScreen extends MainActivity implements View.OnClickListener
         /*btnChoice = (Button) findViewById(R.id.btnChoice);
         btnChoice.setOnClickListener(this);*/
 
-
+        //
         mapDataList = new ArrayList<laMapData>();
         laMapDataDBMgr mapDB = new laMapDataDBMgr(this,"lunchtimeInfo.s3db",null,1);
         try {
@@ -58,6 +63,7 @@ public class outputScreen extends MainActivity implements View.OnClickListener
 
     protected void getChoice()
     {
+        // Gets the data and randomly selects a choice from the retrieved array list
         laMapData mapData;
         String userChoice;
 
@@ -79,11 +85,13 @@ public class outputScreen extends MainActivity implements View.OnClickListener
 
         if (view == btnVenues)
         {
+            // hitting this button starts the venue activity
             startActivity(venueOutput);
         }
 
         if (view == btnMap)
         {
+            // this starts the map activity
             this.startActivity(laMap);
         }
        /* if(view == btnChoice)

@@ -21,13 +21,16 @@ import android.widget.Button;
 
 public class MainActivity extends ActionBarActivity implements View.OnClickListener
 {
-    //SharedPreferences mySharedPrefs;
+    //Fragment manager for the about dialogue
     FragmentManager fmAboutDialogue;
 
+    //Button declaration
     Button btnStart;
     Button btnExit;
     Button btnVenue;
     Button btnParking;
+
+    //variable for retrieved data
     laMapData venueInfo;
 
 
@@ -63,6 +66,7 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
     @Override
     public boolean onCreateOptionsMenu(Menu menu)
     {
+        //Creates the options menu
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.la_menu, menu);
         return true;
@@ -71,20 +75,25 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
     @Override
     public boolean onOptionsItemSelected(MenuItem item)
     {
+        //Generates options to fill the menu with to perform various functions
         switch (item.getItemId())
         {
             case R.id.lunchMap:
+                //Starts map activity
                 Intent laMap = new Intent(this, laMapActivity.class);
                 this.startActivity(laMap);
                 return true;
             case R.id.About:
+                //Starts About Dialogue
                 DialogFragment laAboutDlg = new laAboutDialogue();
                 laAboutDlg.show(fmAboutDialogue,"la_About_Dlg");
                 return true;
             case R.id.Draw:
+                // Starts drawing activity
                 Intent drawingActivity = new Intent(this, drawingActivity.class);
                 this.startActivity(drawingActivity);
             case R.id.Quit:
+                //Exits app or goes to previous activity
             finish();
             return true;
             default:
@@ -94,6 +103,7 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
 
     public void onClick(View view)
     {
+        //Intents declared for other activities
         Intent outputScreen = new Intent(getApplicationContext(), outputScreen.class);
 
         Intent venueOutput = new Intent(getApplicationContext(), venueOutput.class);
@@ -102,19 +112,23 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
 
 
         if (view == btnExit) {
+            //Exits app or goes to previous activity
             setResult(Activity.RESULT_OK);
             finish();
         }
         if (view == btnVenue)
         {
+            //Starts the venue activity
            startActivity(venueOutput);
         }
         if (view == btnParking)
         {
+            //starts the car park parser activity
             startActivity(carParkOutput);
         }
         if (view == btnStart)
         {
+            //Starts the choice/output screen activity
             startActivity(outputScreen);
         }
 

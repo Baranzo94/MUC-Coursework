@@ -13,6 +13,7 @@ import android.widget.TextView;
  */
 public class venueOutput extends MainActivity implements View.OnClickListener
 {
+    //Declaration of Textviews and Imageviews to show all avaiable venues
     TextView tv1;
     TextView tv2;
     TextView tv3;
@@ -30,7 +31,7 @@ public class venueOutput extends MainActivity implements View.OnClickListener
     {
         super.onCreate(savedInstance);
         setContentView(R.layout.venue_screen);
-
+        // Get the views and assign the images to the imageviews and add text to the textviews
         tv1 = (TextView) findViewById(R.id.tv1);
         tv2 = (TextView) findViewById(R.id.tv2);
         tv3 = (TextView) findViewById(R.id.tv3);
@@ -68,7 +69,7 @@ public class venueOutput extends MainActivity implements View.OnClickListener
         tv3.setText("Ichiban, Japanese Noodle Bar");
         tv4.setText("KFC, Fried Chicken Fast Food");
         tv5.setText("McDonald's, American Fast Food");
-
+//Get back button
         btnBack1 = (Button) findViewById(R.id.btnBack1);
         btnBack1.setOnClickListener(this);
 
@@ -76,6 +77,7 @@ public class venueOutput extends MainActivity implements View.OnClickListener
 
     public void onClick(View view)
     {
+        //if back button is pressed then return to previous activity
         if (view == btnBack1) {
             setResult(Activity.RESULT_OK);
             finish();
